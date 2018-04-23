@@ -1,4 +1,4 @@
-<?php include_once( 'header.php' ); ?>
+<?php get_header(); ?>
 
 	<header class="page-header">
 	
@@ -106,6 +106,6 @@
 		
 	</section><!-- end #main -->
 
-	<?php include_once( 'sidebar.php' ); ?>
+	<?php get_sidebar(); ?>
 	
-<?php include_once( 'footer.php' ); ?>
+<?php get_footer(); ?>

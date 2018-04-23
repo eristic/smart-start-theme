@@ -12,31 +12,13 @@
 
 <header id="header" class="container clearfix">
 
-	<a href="index.php" id="logo">
-		<img src="img/logo.png" alt="SmartStart">
+	<a href="<?php home_url();?>" id="logo">
+		<img src="<?php echo get_stylesheet_directory_uri();?>/img/logo.png" alt="SmartStart">
 	</a>
 
-	<nav id="main-nav">
-		
-		<ul>
-			<li class="current">
-				<a href="index.php">Home</a>
-			</li>
-			<li>
-				<a href="team.php">Our Team</a>
-			</li>
-			<li>
-				<a href="blog.php">Blog</a>
-			</li>
-			<li>
-				<a href="portfolio.php">Portfolio</a>
-			</li>
-			<li>
-				<a href="contact.php">Contact</a>
-			</li>
-		</ul>
+	<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'container_id' => 'main-nav' , 'container' => 'nav' ) ); ?>
 
-	</nav><!-- end #main-nav -->
+	<!-- end header nav -->	
 	
 </header><!-- end #header -->
 

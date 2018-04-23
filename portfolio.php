@@ -1,4 +1,4 @@
-<?php include_once( 'header.php' ); ?>
+<?php get_header(); ?>
 
 	<header class="page-header">
 	
@@ -139,4 +139,4 @@
 
 	</section><!-- end #portfolio-items -->
 	
-<?php include_once( 'footer.php' ); ?>
+<?php get_footer(); ?>

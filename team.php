@@ -1,4 +1,4 @@
-<?php include_once( 'header.php' ); ?>
+<?php get_header(); ?>
 
 	<header class="page-header">
 
@@ -210,4 +210,4 @@
 		
 	</div><!-- end .team-member.one-fourth.last -->
 	
-<?php include_once( 'footer.php' ); ?>
+<?php get_footer(); ?>

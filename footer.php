@@ -6,17 +6,9 @@
 
 		<div class="three-fourth">
 
-			<nav id="footer-nav" class="clearfix">
+			<?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'container_id' => 'footer-nav' , 'container' => 'nav' ) ); ?>
 
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="elements.html">Features</a></li>
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="portfolio-4-columns.html">Portfolio</a></li>
-					<li><a href="contact-us.html">Contact</a></li>
-				</ul>
-				
-			</nav><!-- end #footer-nav -->
+			<!-- end footer nav -->
 
 			<ul class="contact-info">
 				<li class="address">012 Some Street. New York, NY, 12345. USA</li>
@@ -50,7 +42,7 @@
 	<div class="container">
 
 		<ul>
-			<li>SmartStart &copy; 2012</li>
+			<li>SmartStart &copy; <?php echo date('Y');?></li>
 			<li><a href="#">Legal Notice</a></li>
 			<li><a href="#">Terms</a></li>
 		</ul>

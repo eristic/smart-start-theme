@@ -1,4 +1,4 @@
-<?php include_once( 'header.php' ); ?>
+<?php get_header(); ?>
 
 	<h2 class="slogan align-center">We are a group of experienced designers and developers.<br />
 	We set new standards in user experience &amp; make future happen.</h2>
@@ -263,4 +263,4 @@
 
 	</ul><!-- end .post-carousel -->
 
-<?php include_once( 'footer.php' ); ?>
+<?php get_footer(); ?>

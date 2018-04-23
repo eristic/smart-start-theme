@@ -1,4 +1,4 @@
-<?php include_once( 'header.php' ); ?>
+<?php get_header(); ?>
 
 	<article class="single-project">
 
@@ -76,4 +76,4 @@
 		
 	</article><!-- end .single-project -->
 	
-<?php include_once( 'footer.php' ); ?>
+<?php get_footer(); ?>

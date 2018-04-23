@@ -1,4 +1,4 @@
-<?php include_once( 'header.php' ); ?>
+<?php get_header(); ?>
 
 	<div class="container clearfix">
 
@@ -72,4 +72,4 @@
 
 	</div><!-- end .container -->
 		
-<?php include_once( 'footer.php' ); ?>
+<?php get_footer(); ?>
