@@ -50,6 +50,6 @@
 	</div><!-- end .container -->
 
 </footer><!-- end #footer-bottom -->
-
+<?php wp_footer(); ?>
 </body>
 </html>
