@@ -57,6 +57,49 @@
 
 	<ul class="projects-carousel clearfix">
 
+	<?php
+
+
+	$args = array(
+	'post_type' =>  'projects',
+	'offset' => 5
+	); 
+
+	$query = new WP_Query($args); 
+
+	if ( $query->have_posts() ) {
+	
+	while ( $query->have_posts() ) {
+		$query->the_post();
+
+	 ?>
+		
+		<li>
+
+			<a href="single-project.html">
+				<?php the_post_thumbnail('latest-project');?>
+				<h5 class="title"><?php echo the_title();?></h5>
+				<span class="categories">
+				<?php 
+					$taxonomies = get_taxonomies(); 
+					foreach ( $taxonomies as $taxonomy ) {
+						echo  $taxonomy;
+					}
+				?>
+				</span>
+			</a>
+
+		</li>
+	
+		<?php }
+
+		wp_reset_postdata();
+	} else {
+		// no posts found
+	}
+
+	?>
+
 		<li>
 			<a href="single-project.html">
 				<img src="img/placeholders/portfolio-project-4th-1.jpg" alt="">
