@@ -117,5 +117,6 @@ function smartstart_theme_setup() {
   add_image_size( 'blog-post', 680, 235);
   add_image_size( 'portfolio-project', 300, 190);
   add_image_size( 'latest-project', 220, 140);
+  add_image_size( 'blog-post-front', 220, 75);
 }
 

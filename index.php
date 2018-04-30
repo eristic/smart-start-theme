@@ -100,187 +100,42 @@
 
 	?>
 
-		<li>
-			<a href="single-project.html">
-				<img src="img/placeholders/portfolio-project-4th-1.jpg" alt="">
-				<h5 class="title">Altered</h5>
-				<span class="categories">illustration / design</span>
-			</a>
-		</li>
-
-		<li>
-			<a href="single-project.html">
-				<img src="img/placeholders/portfolio-project-4th-2.jpg" alt="">
-				<h5 class="title">Snow Tower</h5>
-				<span class="categories">illustration / photography</span>
-			</a>
-		</li>
-
-		<li>
-			<a href="single-project.html">
-				<img src="img/placeholders/portfolio-project-4th-3.jpg" alt="">
-				<h5 class="title">Not the end</h5>
-				<span class="categories">animation / illustration</span>
-			</a>
-		</li>
-
-		<li>
-			<a href="single-project.html">
-				<img src="img/placeholders/portfolio-project-4th-4.jpg" alt="">
-				<h5 class="title">Shift</h5>
-				<span class="categories">web / animation</span>
-			</a>
-		</li>
-
-		<li>
-			<a href="single-project.html">
-				<img src="img/placeholders/portfolio-project-4th-1.jpg" alt="">
-				<h5 class="title">Synergy</h5>
-				<span class="categories">illustration / photography</span>
-			</a>
-		</li>
-
-		<li>
-			<a href="single-project.html">
-				<img src="img/placeholders/portfolio-project-4th-2.jpg" alt="">
-				<h5 class="title">The Game</h5>
-				<span class="categories">photography</span>
-			</a>
-		</li>
-
-		<li>
-			<a href="single-project.html">
-				<img src="img/placeholders/portfolio-project-4th-3.jpg" alt="">
-				<h5 class="title">Trantor</h5>
-				<span class="categories">illustration / web / animation</span>
-			</a>
-		</li>
-
-		<li>
-			<a href="single-project.html">
-				<img src="img/placeholders/portfolio-project-4th-4.jpg" alt="">
-				<h5 class="title">Futurisk</h5>
-				<span class="categories">illustration / design</span>
-			</a>
-		</li>
-
-	</ul><!-- end .projects-carousel -->
 
 	<h6 class="section-title">Latest stuff from our blog</h6>
 
 	<ul class="post-carousel">
 
+	 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
 		<li>
 
-			<a href="single-post.html">
-				<img src="img/placeholders/blog-post-1.jpg" alt="" class="entry-image">
+			<a href="<?php the_permalink();?>">
+				<?php the_post_thumbnail('blog-post-front', array('class' => 'entry-image'));?>
 			</a>
 
 			<div class="entry-meta">
 
-				<a href="single-post.html">
+				<a href="<?php the_permalink();?>">
 					<span class="post-format">Permalink</span>
 				</a>
 
-				<span class="date">Sep 17 2011</span>
+				<span class="date"><?php the_date('M d Y');?></span>
 
 			</div><!-- end .entry-meta -->
 
 			<div class="entry-body">
 
-				<a href="single-post.html">
-					<h5 class="title">Bringing iMessage to the Desktop</h5>
+				<a href="<?php the_permalink();?>">
+					<h5 class="title"><?php echo the_title();?></h5>
 				</a>
 
-				<p>Lorem ipsum dolor sit amet nec, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque.</p>
+				<p><?php the_excerpt();?></p>
 					
 			</div><!-- end .entry-body -->
 
 		</li>
 		
-		<li>
-
-			<a href="single-post.html">
-				<img src="img/placeholders/blog-post-1.jpg" alt="" class="entry-image">
-			</a>
-
-			<div class="entry-meta">
-
-				<a href="single-post.html">
-					<span class="post-format">Permalink</span>
-				</a>
-
-				<span class="date">Sep 17 2011</span>
-
-			</div><!-- end .entry-meta -->
-
-			<div class="entry-body">
-
-				<a href="single-post.html">
-					<h5 class="title">Bringing iMessage to the Desktop</h5>
-				</a>
-
-				<p>Lorem ipsum dolor sit amet nec, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque.</p>
-					
-			</div><!-- end .entry-body -->
-
-		</li>
-		
-		<li>
-
-			<a href="single-post.html">
-				<img src="img/placeholders/blog-post-1.jpg" alt="" class="entry-image">
-			</a>
-
-			<div class="entry-meta">
-
-				<a href="single-post.html">
-					<span class="post-format">Permalink</span>
-				</a>
-
-				<span class="date">Sep 17 2011</span>
-
-			</div><!-- end .entry-meta -->
-
-			<div class="entry-body">
-
-				<a href="single-post.html">
-					<h5 class="title">Bringing iMessage to the Desktop</h5>
-				</a>
-
-				<p>Lorem ipsum dolor sit amet nec, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque.</p>
-					
-			</div><!-- end .entry-body -->
-
-		</li>
-		
-		<li>
-
-			<a href="single-post.html">
-				<img src="img/placeholders/blog-post-1.jpg" alt="" class="entry-image">
-			</a>
-
-			<div class="entry-meta">
-
-				<a href="single-post.html">
-					<span class="post-format">Permalink</span>
-				</a>
-
-				<span class="date">Sep 17 2011</span>
-
-			</div><!-- end .entry-meta -->
-
-			<div class="entry-body">
-
-				<a href="single-post.html">
-					<h5 class="title">Bringing iMessage to the Desktop</h5>
-				</a>
-
-				<p>Lorem ipsum dolor sit amet nec, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque.</p>
-					
-			</div><!-- end .entry-body -->
-
-		</li>
+		<?php endwhile; endif; ?> 
 
 	</ul><!-- end .post-carousel -->
 
