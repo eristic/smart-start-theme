@@ -1,142 +1,61 @@
 <?php get_header(); ?>
 
-	<h2 class="slogan align-center">We are a group of experienced designers and developers.<br />
-	We set new standards in user experience &amp; make future happen.</h2>
-
-<section id="features-slider" class="ss-slider">
-<?php
-
-	$count = 1;
-	$args = array(
-	'post_type' =>  'projects',
-	'category_name' => 'featured'
-	); 
+	<header class="page-header">
 	
-	$query = new WP_Query($args); 
+		<h1 class="page-title">Welcome to our blog</h1>
+		
+	</header><!-- end .page-header -->
 	
-	if ( $query->have_posts() ) {
-		
-		while ( $query->have_posts() ) {
-			$query->the_post();
-
-		 ?>
-			
-			<article class="slide">
-		
-				<?php the_post_thumbnail('project-size', array('class' => 'slide-bg-image'));?>
-					
-				<div class="slide-button">
-						<span class="dropcap">
-						<?php echo $count++ ?>
-						</span>
-						<h5><?php the_title();?></h5>
-				</div>
-				
-				<div class="slide-content">
-						<h2><?php the_title();?></h2>
-						<p><?php the_excerpt();?></p>
-						<p><a class="button" href="<?php echo the_permalink();?>">Read More</a></p>
-				</div>
-					
-			</article><!-- end .slide (Responsive Layout) -->
-		
-		
-		
-		<?php }
-
-		wp_reset_postdata();
-	} else {
-		// no posts found
-	}
-	
-	?>
-
-	</section><!-- end #features-slider -->
-
-	<h6 class="section-title">Latest Projects</h6>
-
-	<ul class="projects-carousel clearfix">
-
-	<?php
-
-
-	$args = array(
-	'post_type' =>  'projects',
-	'offset' => 5
-	); 
-
-	$query = new WP_Query($args); 
-
-	if ( $query->have_posts() ) {
-	
-	while ( $query->have_posts() ) {
-		$query->the_post();
-
-	 ?>
-		
-		<li>
-
-			<a href="single-project.html">
-				<?php the_post_thumbnail('latest-project');?>
-				<h5 class="title"><?php the_title();?></h5>
-				<span class="categories">
-				<?php 
-					$taxonomies = get_taxonomies(); 
-					foreach ( $taxonomies as $taxonomy ) {
-						echo  $taxonomy;
-					}
-				?>
-				</span>
-			</a>
-
-		</li>
-	
-		<?php }
-
-		wp_reset_postdata();
-	} else {
-		// no posts found
-	}
-
-	?>
-
-
-	<h6 class="section-title">Latest stuff from our blog</h6>
-
-	<ul class="post-carousel">
+	<section id="main">
 
 	 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-		<li>
+		<article class="entry clearfix">
 
-			<a href="<?php the_permalink();?>">
-				<?php the_post_thumbnail('blog-post-front', array('class' => 'entry-image'));?>
+			<a href="<?php the_permalink();?>" title="<?php the_title();?>">
+				<?php the_post_thumbnail('blog-post', array('class' => 'entry-image'));?>
 			</a>
-
-			<div class="entry-meta">
-
-				<a href="<?php the_permalink();?>">
-					<span class="post-format">Permalink</span>
-				</a>
-
-				<span class="date"><?php the_date('M d Y');?></span>
-
-			</div><!-- end .entry-meta -->
 
 			<div class="entry-body">
 
 				<a href="<?php the_permalink();?>">
-					<h5 class="title"><?php the_title();?></h5>
+					<h1 class="title"><?php the_title();?></h1>
 				</a>
 
 				<p><?php the_excerpt();?></p>
-					
 			</div><!-- end .entry-body -->
 
-		</li>
+			<div class="entry-meta">
+
+				<ul>
+					<li><a href="<?php the_permalink();?>"><span class="post-format ">Permalink</span></a></li>
+					<li><span class="title">Posted:</span> <a href="#"><?php the_date('M d Y');?></a></li>
+					<li><span class="title">Tags:</span> 
+					<?php $tags = get_the_tags(); 
+					if( $tags ) foreach( $tags as $tag ) { ?>
+					<a href="<?php echo get_tag_link($tag->term_id); ?>"><?php echo $tag->name; ?></a>
+					<?php } ?>
+					<?php break; ?>
+					<li><span class="title">Comments:</span> <a href="<?php comments_link();?>"><?php comments_number();?></a></li>
+				</ul>
+
+			</div><!-- end .entry-meta -->
+			
+		</article><!-- end .entry -->
+
+		<?php endwhile; endif; ?>
 		
-		<?php endwhile; endif; ?> 
+		<ul class="pagination">
+			<li class="next"><a href="#">&larr; Next</a></li>
+			<li><a href="#">1</a></li>
+			<li class="current">2</li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li class="prev"><a href="#">Previous &rarr;</a></li>
+		</ul>
+		
+	</section><!-- end #main -->
 
-	</ul><!-- end .post-carousel -->
-
+	<?php get_sidebar(); ?>
+	
 <?php get_footer(); ?>
