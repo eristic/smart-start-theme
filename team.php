@@ -9,205 +9,56 @@
 		<h2 class="page-subdescription"><strong>Our success - people we employ.</strong> Consectetur adipisicing elit, ut labore et dolore magna aliqua. Praesent dapibus, neque id cursus faucibus, tortor neque egesaugue, eu vulputate magna eros eu erat.</h2>
 		
 	</header><!-- end .page-header -->
+
+	<?php
+
+		$args = array(
+		'post_type' =>  'team'
+		); 
+
+		$query = new WP_Query($args); 
+
+		if ( $query->have_posts() ) {
+			
+			while ( $query->have_posts() ) {
+				$query->the_post();
+
+			?>
 	
 	<div class="team-member one-fourth">
 
-		<img src="http://c4600283.r83.cf2.rackcdn.com/html-placeholders/team-member.jpg" alt="" class="photo">
+		<?php the_post_thumbnail('team-member', array('class' => 'photo'));?>
 
 		<div class="content">
 
-			<h4 class="name">John Doe</h4>
+			<h4 class="name"><?php the_title();?></h4>
 
-			<span class="job-title">Principal designer</span>
+			<span class="job-title"><?php the_excerpt();?></span>
 
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan.</p>
+			<p><?php the_field('the_team_description');?></p>
 			
 		</div><!-- end .content -->
 	
 		<ul class="social-links">
-			<li class="twitter"><a href="#">Twitter</a></li>
-			<li class="facebook"><a href="#">Facebook</a></li>
-			<li class="skype"><a href="#">Skype</a></li>
-			<li class="linkedin"><a href="#">LinkedIn</a></li>
-			<li class="googleplus"><a href="#">Google+</a></li>
-			<li class="email"><a href="#">Email</a></li>
+			<li class="twitter"><a href="<?php the_field('team_twitter_link');?>">Twitter</a></li>
+			<li class="facebook"><a href="<?php the_field('team_facebook_link');?>">Facebook</a></li>
+			<li class="skype"><a href="<?php the_field('team_skype_link');?>">Skype</a></li>
+			<li class="linkedin"><a href="<?php the_field('team_linkedin_link');?>">LinkedIn</a></li>
+			<li class="googleplus"><a href="<?php the_field('team_googleplus_link');?>">Google+</a></li>
+			<li class="email"><?php the_field('team_email_link');?>">Email</a></li>
 		</ul><!-- end .social-links -->
 		
 	</div><!-- end .team-member.one-fourth -->
+
+
+	<?php }
+
+	wp_reset_postdata();
+	} else {
+	// no posts found
+	}
+
+	?>
 	
-	<div class="team-member one-fourth">
-
-		<img src="http://c4600283.r83.cf2.rackcdn.com/html-placeholders/team-member.jpg" alt="" class="photo">
-
-		<div class="content">
-
-			<h4 class="name">John Doe</h4>
-
-			<span class="job-title">Principal designer</span>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan.</p>
-			
-		</div><!-- end .content -->
-	
-		<ul class="social-links">
-			<li class="twitter"><a href="#">Twitter</a></li>
-			<li class="facebook"><a href="#">Facebook</a></li>
-			<li class="skype"><a href="#">Skype</a></li>
-			<li class="linkedin"><a href="#">LinkedIn</a></li>
-			<li class="googleplus"><a href="#">Google+</a></li>
-			<li class="email"><a href="#">Email</a></li>
-		</ul><!-- end .social-links -->
-		
-	</div><!-- end .team-member.one-fourth -->
-	
-	<div class="team-member one-fourth">
-
-		<img src="http://c4600283.r83.cf2.rackcdn.com/html-placeholders/team-member.jpg" alt="" class="photo">
-
-		<div class="content">
-
-			<h4 class="name">John Doe</h4>
-
-			<span class="job-title">Principal designer</span>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan.</p>
-			
-		</div><!-- end .content -->
-	
-		<ul class="social-links">
-			<li class="twitter"><a href="#">Twitter</a></li>
-			<li class="facebook"><a href="#">Facebook</a></li>
-			<li class="skype"><a href="#">Skype</a></li>
-			<li class="linkedin"><a href="#">LinkedIn</a></li>
-			<li class="googleplus"><a href="#">Google+</a></li>
-			<li class="email"><a href="#">Email</a></li>
-		</ul><!-- end .social-links -->
-		
-	</div><!-- end .team-member.one-fourth -->
-	
-	<div class="team-member one-fourth last">
-
-		<img src="http://c4600283.r83.cf2.rackcdn.com/html-placeholders/team-member.jpg" alt="" class="photo">
-
-		<div class="content">
-
-			<h4 class="name">John Doe</h4>
-
-			<span class="job-title">Principal designer</span>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan.</p>
-			
-		</div><!-- end .content -->
-	
-		<ul class="social-links">
-			<li class="twitter"><a href="#">Twitter</a></li>
-			<li class="facebook"><a href="#">Facebook</a></li>
-			<li class="skype"><a href="#">Skype</a></li>
-			<li class="linkedin"><a href="#">LinkedIn</a></li>
-			<li class="googleplus"><a href="#">Google+</a></li>
-			<li class="email"><a href="#">Email</a></li>
-		</ul><!-- end .social-links -->
-		
-	</div><!-- end .team-member.one-fourth.last -->
-	
-	<div class="team-member one-fourth">
-
-		<img src="http://c4600283.r83.cf2.rackcdn.com/html-placeholders/team-member.jpg" alt="" class="photo">
-
-		<div class="content">
-
-			<h4 class="name">John Doe</h4>
-
-			<span class="job-title">Principal designer</span>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan.</p>
-			
-		</div><!-- end .content -->
-	
-		<ul class="social-links">
-			<li class="twitter"><a href="#">Twitter</a></li>
-			<li class="facebook"><a href="#">Facebook</a></li>
-			<li class="skype"><a href="#">Skype</a></li>
-			<li class="linkedin"><a href="#">LinkedIn</a></li>
-			<li class="googleplus"><a href="#">Google+</a></li>
-			<li class="email"><a href="#">Email</a></li>
-		</ul><!-- end .social-links -->
-		
-	</div><!-- end .team-member.one-fourth -->
-	
-	<div class="team-member one-fourth">
-
-		<img src="http://c4600283.r83.cf2.rackcdn.com/html-placeholders/team-member.jpg" alt="" class="photo">
-
-		<div class="content">
-
-			<h4 class="name">John Doe</h4>
-
-			<span class="job-title">Principal designer</span>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan.</p>
-			
-		</div><!-- end .content -->
-	
-		<ul class="social-links">
-			<li class="twitter"><a href="#">Twitter</a></li>
-			<li class="facebook"><a href="#">Facebook</a></li>
-			<li class="skype"><a href="#">Skype</a></li>
-			<li class="linkedin"><a href="#">LinkedIn</a></li>
-			<li class="googleplus"><a href="#">Google+</a></li>
-			<li class="email"><a href="#">Email</a></li>
-		</ul><!-- end .social-links -->
-		
-	</div><!-- end .team-member.one-fourth -->
-	
-	<div class="team-member one-fourth">
-
-		<img src="http://c4600283.r83.cf2.rackcdn.com/html-placeholders/team-member.jpg" alt="" class="photo">
-
-		<div class="content">
-
-			<h4 class="name">John Doe</h4>
-
-			<span class="job-title">Principal designer</span>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan.</p>
-			
-		</div><!-- end .content -->
-	
-		<ul class="social-links">
-			<li class="twitter"><a href="#">Twitter</a></li>
-			<li class="facebook"><a href="#">Facebook</a></li>
-			<li class="skype"><a href="#">Skype</a></li>
-			<li class="linkedin"><a href="#">LinkedIn</a></li>
-			<li class="googleplus"><a href="#">Google+</a></li>
-			<li class="email"><a href="#">Email</a></li>
-		</ul><!-- end .social-links -->
-		
-	</div><!-- end .team-member.one-fourth -->
-	
-	<div class="team-member one-fourth last">
-
-		<img src="http://c4600283.r83.cf2.rackcdn.com/html-placeholders/team-member.jpg" alt="" class="photo">
-
-		<div class="content">
-
-			<h4 class="name">John Doe</h4>
-
-			<span class="job-title">Principal designer</span>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan.</p>
-			
-		</div><!-- end .content -->
-	
-		<ul class="social-links">
-			<li class="twitter"><a href="#">Twitter</a></li>
-			<li class="facebook"><a href="#">Facebook</a></li>
-			<li class="skype"><a href="#">Skype</a></li>
-			<li class="linkedin"><a href="#">LinkedIn</a></li>
-			<li class="googleplus"><a href="#">Google+</a></li>
-			<li class="email"><a href="#">Email</a></li>
-		</ul><!-- end .social-links -->
-		
-	</div><!-- end .team-member.one-fourth.last -->
 	
 <?php get_footer(); ?>

@@ -29,11 +29,11 @@
 						<span class="dropcap">
 						<?php echo $count++ ?>
 						</span>
-						<h5><?php echo the_title();?></h5>
+						<h5><?php the_title();?></h5>
 				</div>
 				
 				<div class="slide-content">
-						<h2><?php echo the_title();?></h2>
+						<h2><?php the_title();?></h2>
 						<p><?php the_excerpt();?></p>
 						<p><a class="button" href="<?php echo the_permalink();?>">Read More</a></p>
 				</div>
@@ -78,7 +78,7 @@
 
 			<a href="single-project.html">
 				<?php the_post_thumbnail('latest-project');?>
-				<h5 class="title"><?php echo the_title();?></h5>
+				<h5 class="title"><?php the_title();?></h5>
 				<span class="categories">
 				<?php 
 					$taxonomies = get_taxonomies(); 
@@ -126,7 +126,7 @@
 			<div class="entry-body">
 
 				<a href="<?php the_permalink();?>">
-					<h5 class="title"><?php echo the_title();?></h5>
+					<h5 class="title"><?php the_title();?></h5>
 				</a>
 
 				<p><?php the_excerpt();?></p>
