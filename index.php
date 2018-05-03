@@ -44,6 +44,8 @@
 		</article><!-- end .entry -->
 
 		<?php endwhile; endif; ?>
+
+		<?php wp_pagenavi(); ?>
 		
 		<ul class="pagination">
 			<li class="next"><a href="#">&larr; Next</a></li>

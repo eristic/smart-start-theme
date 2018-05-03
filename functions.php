@@ -176,4 +176,16 @@ function smartstart_theme_setup() {
   add_image_size( 'team-member', 220,  245);
   add_image_size( 'blog-post-front', 220, 75);
 }
+function smartstart_widgets_init() {
 
+	register_sidebar( array(
+		'name'          => 'Right sidebar',
+		'id'            => 'right_1',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="rounded">',
+		'after_title'   => '</h2>',
+	) );
+
+}
+add_action( 'widgets_init', 'smartstart_widgets_init' );
