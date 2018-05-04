@@ -44,19 +44,10 @@
 		</article><!-- end .entry -->
 
 		<?php endwhile; endif; ?>
-
-		<?php wp_pagenavi(); ?>
-		
-		<ul class="pagination">
-			<li class="next"><a href="#">&larr; Next</a></li>
-			<li><a href="#">1</a></li>
-			<li class="current">2</li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li class="prev"><a href="#">Previous &rarr;</a></li>
-		</ul>
 		
 	</section><!-- end #main -->
+
+	<?php wp_pagenavi(); ?>
 
 	<?php get_sidebar(); ?>
 	
