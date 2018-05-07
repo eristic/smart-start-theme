@@ -2080,6 +2080,15 @@ input.placeholder, textarea.placeholder { color: #b0b0b0; }
 				width: 657px;
 			}
 
+		#commentform textarea{
+			height: 150px;
+			width: 657px;
+		}	
+
+		#commentform input {
+			width: 191px; 
+		}
+
 	/* -------------------------------------------------- */
 	/*	Pagination
 	/* -------------------------------------------------- */
@@ -2305,13 +2314,23 @@ input.placeholder, textarea.placeholder { color: #b0b0b0; }
 		margin: 0 20px 20px 0;
 	}
 
+	#commentform textarea{
+		height: 150px;
+		width: 657px;
+	}	
+
+	#commentform input {
+		float: left;
+		margin: 0 20px 20px 0;
+	}
+
 	.contact-form .input-block:nth-of-type(3n), .comments-form .input-block:nth-of-type(3n) { margin-right: 0; }
 
-		.contact-form input { width: 198px; }
+		.contact-form input, #commentform input  { width: 198px; }
 
 	.contact-form .textarea-block, .comments-form .textarea-block { clear: both; }
 
-		.contact-form textarea {
+		.contact-form textarea, #commentform textarea {
 			height: 150px;
 			max-width: 100%;
 			width: 678px;
