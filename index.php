@@ -50,6 +50,6 @@
 
 	<?php wp_pagenavi(); ?>
 
-	<?php get_sidebar(); ?>
+	<?php get_sidebar('right_1'); ?>
 	
 <?php get_footer(); ?>

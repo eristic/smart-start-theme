@@ -183,7 +183,16 @@ function smartstart_widgets_init() {
 		'id'            => 'right_1',
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="rounded">',
+		'before_title'  => '<h2 class="blog">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Portfolio sidebar',
+		'id'            => 'portfolio_1',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="portfolio">',
 		'after_title'   => '</h2>',
 	) );
 

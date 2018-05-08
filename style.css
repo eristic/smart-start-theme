@@ -2326,11 +2326,11 @@ input.placeholder, textarea.placeholder { color: #b0b0b0; }
 
 	.contact-form .input-block:nth-of-type(3n), .comments-form .input-block:nth-of-type(3n) { margin-right: 0; }
 
-		.contact-form input, #commentform input  { width: 198px; }
+		.contact-form input, #commentform input, #contact-form-1 input  { width: 198px; }
 
 	.contact-form .textarea-block, .comments-form .textarea-block { clear: both; }
 
-		.contact-form textarea, #commentform textarea {
+		.contact-form textarea, #commentform textarea, #contact-form-1 textarea {
 			height: 150px;
 			max-width: 100%;
 			width: 678px;
